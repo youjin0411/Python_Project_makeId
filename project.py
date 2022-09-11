@@ -17,17 +17,26 @@ from pandas import read_excel
 import random
 
 ID = input("이름을 입력해주세요 : ")
+#엑셀 파일 읽기 
 data = pd.read_excel('F:\python\실습\삐삐는아이디\db.xlsx')
 li = []
 
+#엑셀 파일의 숫자 암호 리스트li에 담기
 for i in range(len(data['암호'])):
     li.append(data['암호'][i])
-    
+
+#리스트 li안에 있는 숫자 암호 랜덤으로 하나 makeId에 주기
 makeId = random.sample(li, 1)
+
+#[] 빠져나오기 
 makeId = str(makeId).strip('[]')
+
+#생성된 아이디 출력
 print("\n생성된 아이디 : ",ID,"_",makeId, "\n")
 #의미 보여주기 
 
+
 #삐삐 숫자 암호 의미
-print(data)
-data['암호']
+# print(data)
+# data['암호']
+
