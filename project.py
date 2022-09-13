@@ -20,10 +20,15 @@ ID = input("이름을 입력해주세요 : ")
 #엑셀 파일 읽기 
 data = pd.read_excel('F:\python\실습\삐삐는아이디\db.xlsx')
 li = []
+passli = []
 
 #엑셀 파일의 숫자 암호 리스트li에 담기
 for i in range(len(data['암호'])):
     li.append(data['암호'][i])
+
+#엑셀 파일의 암호 의미 리스트 passli에 담기
+for i in range(len(data['의미'])):
+    passli.append(data['의미'][i])
 
 #리스트 li안에 있는 숫자 암호 랜덤으로 하나 makeId에 주기
 makeId = random.sample(li, 1)
@@ -35,9 +40,8 @@ makeId = str(makeId).strip('[]')
 #생성된 아이디 출력
 print("\n생성된 아이디 : ",ID,"_",makeId, "\n")
 #의미 보여주기 
-# print("아이디 의미 : ")
-res = data.loc[[ind],['의미']]
-print(res)
+id_mean = str(passli[ind]).strip('[]')
+print("아이디 의미 : " , id_mean)
 
 #삐삐 숫자 암호 의미
 # print(data)
