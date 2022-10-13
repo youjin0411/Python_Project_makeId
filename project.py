@@ -18,16 +18,18 @@ from pandas import read_excel
 import random
 
 # 엑셀 파일 읽기
-data = pd.read_excel('F:\파이썬프로젝트_Id\db.xlsx')
+data = pd.read_excel('E:\파이썬프로젝트_Id\db.xlsx')
 li = []
 passli = []
 
-data2 = pd.read_excel('F:\파이썬프로젝트_Id\idname.xlsx')
+data2 = pd.read_excel('E:\파이썬프로젝트_Id\idname.xlsx')
 li2 = []
 passli2 = []
 
+
 def WhileCodeProg():
-    while True:
+    choi = 1
+    while choi != 0:
         print("🖤🤍"*15)
         print()
         print("0번. 프로그램 종료")
@@ -40,9 +42,9 @@ def WhileCodeProg():
         print()
 
         choi = int(input("숫자를 선택해주세요 (ex. 1 / 2 ...): "))
-            
+
         if choi == 1:
-                    # 엑셀 파일의 숫자 암호 리스트li에 담기
+            # 엑셀 파일의 숫자 암호 리스트li에 담기
             for i in range(len(data['암호'])):
                 li.append(data['암호'][i])
 
@@ -64,7 +66,7 @@ def WhileCodeProg():
 
             # 리스트 li2안에 있는 숫자 암호 랜덤으로 하나 makeId2에 주기
             makeId2 = random.sample(li2, 1)
-            ansId = ' '.join(map(str, makeId2)) 
+            ansId = ' '.join(map(str, makeId2))
             ind2 = li2.index(ansId)
 
             # [] 빠져나오기
@@ -80,7 +82,7 @@ def WhileCodeProg():
 
             cho = int(input("선택 : "))
             print()
-            
+
             if cho == 1:
                 ID = input("\n이름을 입력해주세요 : ")
                 # 생성된 아이디 출력
@@ -94,20 +96,15 @@ def WhileCodeProg():
                 print("\n생성된 인스타아이디 : ", ansId, "_", makeId, "\n")
                 # 의미 보여주기
                 print("영어 단어 아이디 의미 : ", ansId, " : ", id_mean2)
-                print("숫자 암호 의미 : ", makeId," : ",id_mean)
-            
-            WhileCodeProg()
+                print("숫자 암호 의미 : ", makeId, " : ", id_mean)
 
         if choi == 2:
             print(data)
-            WhileCodeProg()
         if choi == 3:
             print("나만의 숫자 암호 만들기")
-            WhileCodeProg()
         if choi == 4:
             print("재미있는 정보")
-            WhileCodeProg()
-        else:
+        if choi == 0:
             print("프로그램 종료")
             break
 
