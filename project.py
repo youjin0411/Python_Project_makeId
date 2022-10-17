@@ -18,11 +18,11 @@ from pandas import read_excel
 import random
 
 # 엑셀 파일 읽기
-data = pd.read_excel('E:\파이썬프로젝트_Id\db.xlsx')
+data = pd.read_excel('F:\파이썬프로젝트_Id\db.xlsx')
 li = []
 passli = []
 
-data2 = pd.read_excel('E:\파이썬프로젝트_Id\idname.xlsx')
+data2 = pd.read_excel('F:\파이썬프로젝트_Id\idname.xlsx')
 li2 = []
 passli2 = []
 
@@ -100,8 +100,11 @@ def WhileCodeProg():
 
         if choi == 2:
             print(data)
+            print(data2)
         if choi == 3:
             print("나만의 숫자 암호 만들기")
+            password = int(input("숫자 암호를 입력해주세요. : "))
+            psmean = input("의미를 입력해주세요 : ")
         if choi == 4:
             print("재미있는 정보")
         if choi == 0:
