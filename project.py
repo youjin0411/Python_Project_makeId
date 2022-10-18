@@ -5,13 +5,11 @@
 # 3. 나만의 숫자 삐삐 암호 만들기
 # 4. 숫자 암호 관련 정보 확인하기
 
-# 랜덤 아이디 생성하기
-# 엑셀 파일 가져오기
 from ast import While
 from csv import excel
 from operator import index, indexOf
-# 랜덤
-from random import random
+# 랜덤 아이디 생성하기
+from random import Random
 import pandas as pd
 # 엑셀 파일 읽기
 from pandas import read_excel
@@ -106,7 +104,7 @@ def WhileCodeProg():
             password = int(input("숫자 암호를 입력해주세요. : "))
             psmean = input("의미를 입력해주세요 : ")
         if choi == 4:
-            print("재미있는 정보")
+            print("숫자 암호 연결 게임")
         if choi == 0:
             print("프로그램 종료")
             break
